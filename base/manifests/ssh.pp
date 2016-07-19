@@ -1,13 +1,4 @@
 class base::ssh {
-	case $osfamily {
-		'RedHat': {$ssh_name = 'sshd'}
-		'Debian': {$ssh_name = 'ssh'}
-		default : { warning('os not supported by SSH')}
-}
-	package {'openssh-package':	# name title
-		name   => 'openssh-server',	
-		ensure => present,
-	}
 
 	file { '/etc/ssh/sshd_config': # title
 		ensure  => file,
@@ -21,7 +12,7 @@ class base::ssh {
 	}
 	
 	service { 'ssh-service':		# title acts as service name as well here
-		name	  => $ssh_name,
+		name	  => $base::params::ssh_name,
 		ensure    => running,
 		alias     => 'ssh-service-name-two',
 		enable    => true,
