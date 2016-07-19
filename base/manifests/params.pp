@@ -6,8 +6,4 @@ class base::params {
 		default : { warning('os not supported by SSH')}
 	}
 
-	package {'openssh-package':	# name title
-		name   => 'openssh-server',	
-		ensure => present,
-	}
 }

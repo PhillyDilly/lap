@@ -1,4 +1,4 @@
-# test params
+# test params 2 sldpet01 inherits
 # alias# This file is managed by puppet
 # comment 2
 #	$OpenBSD: sshd_config,v 1.80 2008/07/02 02:24:18 djm Exp $

@@ -1,5 +1,9 @@
 class base::ssh {
 
+	package { 'openssh-package' :
+		name   => 'openssh-server',
+		ensure => present,
+}
 	file { '/etc/ssh/sshd_config': # title
 		ensure  => file,
 		owner   => 'root',
