@@ -7,5 +7,7 @@ class ntp {
 	}
 	
 	include ntp::file
+	include ntp::params
+	include ntp::service
 
 }
