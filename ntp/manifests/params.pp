@@ -3,19 +3,25 @@ class ntp::params {
 	case $::operatingsystem {
 		'ubuntu': { 
 			$template = 'ntp_ubuntu.conf'
-			#notice("Ubuntu case selected")
 			$service_name = 'ntp'
+			$default_servers = [ "0.ubuntu.pool.ntp.org iburst",
+					"1.ubuntu.pool.ntp.org iburst",
+					"2.ubuntu.pool.ntp.org iburst",
+					"3.ubuntu.pool.ntp.org iburst", ]
 		}
-		'CentOS': { 
+		'centos': { 
 			$template = 'ntp_centos.conf'
-			#notice("CentOS case selected")
 			$service_name = 'ntpd'
+			$default_servers = [ "0.centos.pool.ntp.org iburst",
+					"1.centos.pool.ntp.org iburst",
+					"2.centos.pool.ntp.org iburst",
+					"3.centos.pool.ntp.org iburst", ]
 		}
 		default:  { 
 			fail('OS $::operatingsystem is not supported') 
-			#notice("inside default, template is set to: $template")
 		}
 	
 	}
+	notice(" ***  default_servers is set to:  $default_servers")
 
 }

@@ -6,4 +6,6 @@ class ntp::service {
 		enable    => true,
 		subscribe => File['/etc/ntp.conf']	# subscribe implies require
 	}
+	notice(" *** default_servers set to : $default_servers")
+	notice(" *** servers set to : $servers")
 }
