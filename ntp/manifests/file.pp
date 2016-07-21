@@ -3,7 +3,8 @@ class ntp::file {
 	$template = $ntp::params::template
 	$servers  = $ntp::params::default_servers
 
-	notice(" *** tempalate set to : $template")
+	notice(" *** template set to : $template")
+	notice(" *** template will be : ntp/${template}.erb")
 	notice(" *** default_servers set to : $servers")
 
 	file { '/etc/ntp.conf' :

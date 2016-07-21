@@ -16,6 +16,7 @@ class ntp::params {
 					"1.centos.pool.ntp.org iburst",
 					"2.centos.pool.ntp.org iburst",
 					"3.centos.pool.ntp.org iburst", ]
+			notice(" ***  cenots default_servers selected ntp::params")
 		}
 		default:  { 
 			fail('OS $::operatingsystem is not supported') 
