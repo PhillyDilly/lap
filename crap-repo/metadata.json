@@ -1,0 +1,17 @@
+{
+  "name": "crap-repo",
+  "version": "0.1.0",
+  "author": "Mr. Robot",
+  "summary": "This is the first crappy module I tried to make.",
+  "license": "Apache 2.0",
+  "source": "https://github.com/PhillyDilly/linuxacademy-puppet.git",
+  "project_page": "https://github.com/PhillyDilly/linuxacademy-puppet",
+  "issues_url": "https://github.com/PhillyDilly/linuxacademy-puppet/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}
+
