@@ -8,23 +8,29 @@ class apache (
 	$servername    = $apache::params::servername,
 	$log_dir       = $apache::params::log_dir,
 
-	) inherits apache::params {
+) inherits apache::params {
 
-	include apache::package
-	include apache::service
+include apache::package
+include apache::service
 
-	file { $log_dir:
-    	ensure  => directory,
-    	recurse => true,
-	}
+file { $log_dir:
+   	ensure  => directory,
+   	recurse => true,
+}
 
-	apache::vhost { "default" :
-    	port          => 80,
-    	document_root => $document_root,
-    	servername    => $servername,
-    	vhost_dir     => $vhost_dir,
-    	}
+apache::vhost { "default" :
+ 	port          => 80,
+ 	document_root => $document_root,
+ 	servername    => $servername,
+ 	vhost_dir     => $vhost_dir,
+}
 
+apache::vhost { "mmontone1b" :
+  port          => 80,
+  document_root => "${document_root}/mmontone1b",
+  servername    => "mmontone1b.mylabserver.com",
+  vhost_dir     => $vhost_dir,
+}
 
 }
 
